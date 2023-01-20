@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koshka Supply and Co.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      font-family: "Aclonica", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      padding: 0;
+      background-image: linear-gradient(to right, #575655, #3b3939);
+    }
+    .carousel-item {
+      background: no-repeat scroll center scroll;
+      background-size: cover;
+      opacity: 0.6;
+    }
+    .carousel-item::before {
+      display: block;
+      position: absolute;
+      opacity: 0.2;
+      background: black;
+    }
+    @media screen and (min-width: 777px) {
+    }
+    .nav-link {
+      padding: 10px 0;
+      color: rgb(187, 119, 31);
+    }
+
+    .navbar {
+      background-image: linear-gradient(to right, #000000, #5e5b58);
+      box-shadow: 0px 0px 10px 2px #000000;
+    }
+    .navbar-brand {
+      color: #e71d36;
+    }
+    .navbar-brand:hover {
+      color: #fdfffc;
+    }
+    #button {
+      background-color: #e71d36;
+      border-color: none;
+      border-radius: 8%;
+    }
+    .navbar li a:hover {
+      color: #ff9f1c;
+      border-color: #f10823;
+    }
+    #search-box {
+      background-color: rgb(187, 119, 31);
+      border-color: rgb(187, 119, 31);
+      width: 220px;
+      box-shadow: 0px 0px 10px 2px rgb(187, 119, 31);
+    }
+    #search-box input[type="search"] {
+      color: #81807f;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+    .navbar li {
+      margin-right: 30px;
+    }
+    #search-box:hover i {
+      color: #ff9f1c;
+    }
+    #search-box i {
+      color: rgb(187, 119, 31);
+    }
+    #search-addon:hover i {
+      color: #ff9f1c;
+    }
+    #search-box:active {
+      box-shadow: 0 0 10px 2px #ff9f1c;
+    }
+    input[type="search"]:focus {
+      box-shadow: 0 0 0 0.2rem #ff9f1c;
+    }
+    .testimonials {
+      color: rgb(189, 181, 181);
+      padding: 50px 0;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-light text-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="img/logo.png"
+            alt="Logo of the brand"
+            style="width: 70px; height: 70px"
+          />
+          Koshka Supply and Co.</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="input-group rounded mx-auto" id="search-box">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <a href="#"><i class="fa fa-search"></i></a>
+            </span>
+          </div>
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><img src="img/home.png" alt="Home logo" /> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><img src="img/project.png" alt="Project logo" /> Project</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><img src="img/about.png" alt="About logo" /> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><img src="img/contact.png" alt="Contact us logo" /> Contact
+                Us</a
+              >
+            </li>
+            <li class="nav-item" id="button">
+              <a class="nav-link mx-2 btn rounded-0" href="#">Shop Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img/slide1.jpg"
+            class="d-block w-100"
+            alt="a closeup picture of an eye"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Your eyes are in your hands.</h3>
+            <p>get the vision you deserve.</p>
+            <button type="button" class="btn btn-primary mt-3 mb-5">
+              Shop Now
+            </button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/slide2.jpeg"
+            class="d-block w-100"
+            alt="a photo of an elf with contacts"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Control your world</h3>
+            <p>through your vision.</p>
+            <button type="button" class="btn btn-primary mt-3 mb-5">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <section class="testimonials">
+      <div class="row text-center">
+        <div class="col-md-4 mb-5 mb-md-0">
+          <div class="d-flex justify-content-center mb-4">
+            <img
+              src="img/luffy.jpg"
+              class="rounded-circle shadow-1-strong"
+              width="150"
+              height="150"
+            />
+          </div>
+          <h5 class="mb-3">PirateKing_12</h5>
+          <h6 class="text-primary mb-3">Customer</h6>
+          <p class="px-xl-3">
+            <i class="fas fa-quote-left pe-2"></i>I have been wearing contact
+            lenses for years and have tried several different brands, but Koshka
+            Supply's contact lenses are by far the most comfortable and
+            long-lasting. I love the convenience of being able to order them
+            online and the fast shipping. I highly recommend Koshka Supply to
+            anyone in need of quality contact lenses."
+          </p>
+          <ul class="list-unstyled d-flex justify-content-center mb-0">
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star-half-alt fa-sm text-warning"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-5 mb-md-0">
+          <div class="d-flex justify-content-center mb-4">
+            <img
+              src="img/killua.jpg"
+              class="rounded-circle shadow-1-strong"
+              width="150"
+              height="150"
+            />
+          </div>
+          <h5 class="mb-3">killua003</h5>
+          <h6 class="text-primary mb-3">Customer</h6>
+          <p class="px-xl-3">
+            <i class="fas fa-quote-left pe-2"></i>I've been wearing contact
+            lenses for over 10 years and I have to say, Koshka Supply and Co's
+            contact lenses are the most comfortable I've ever worn. They're so
+            comfortable, I forget I'm even wearing them! I highly recommend this
+            brand to anyone who wears contact lenses."
+          </p>
+          <ul class="list-unstyled d-flex justify-content-center mb-0">
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-0">
+          <div class="d-flex justify-content-center mb-4">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+              class="rounded-circle shadow-1-strong"
+              width="150"
+              height="150"
+            />
+          </div>
+          <h5 class="mb-3">John Smith</h5>
+          <h6 class="text-primary mb-3">Customer</h6>
+          <p class="px-xl-3">
+            <i class="fas fa-quote-left pe-2"></i>I've tried many different
+            brands of contact lenses, but Koshka Supply and Co's are by far the
+            best. They're easy to put in, don't dry out my eyes, and last a long
+            time. I also appreciate how affordable they are. I won't be
+            switching to any other brand anytime soon."
+          </p>
+          <ul class="list-unstyled d-flex justify-content-center mb-0">
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="fas fa-star fa-sm text-warning"></i>
+            </li>
+            <li>
+              <i class="far fa-star fa-sm text-warning"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="#">
+      <footer style="background-color: #9c9177">
+        <div class="container p-4">
+          <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+              <img
+                src="img/logo.png"
+                alt="Logo of the brand"
+                style="width: 24px"
+                height="24px"
+              />
+              <h5 class="mb-3 mt-3" style="letter-spacing: 2px; color: #313831">
+                Koshka Supply and Co.
+              </h5>
+              <p>
+                With one of the biggest collections of anime contact lenses
+                available online, we guarantee that you'll find your perfect
+                pair here at Koshka Supply and Co.
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="mb-3" style="letter-spacing: 2px; color: #313831">
+                Links
+              </h5>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-1">
+                  <a href="#!" style="color: #4f4f4f"
+                    >Frequently Asked Questions</a
+                  >
+                </li>
+                <li class="mb-1">
+                  <a href="#!" style="color: #4f4f4f">Delivery</a>
+                </li>
+                <li class="mb-1">
+                  <a href="#!" style="color: #4f4f4f">Pricing</a>
+                </li>
+                <li>
+                  <a href="#!" style="color: #4f4f4f">Where we deliver?</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5 class="mb-1" style="letter-spacing: 2px; color: #313831">
+                Opening Hours
+              </h5>
+              <table class="table" style="color: #4f4f4f; border-color: #666">
+                <tbody>
+                  <tr>
+                    <td>Mon - Fri:</td>
+                    <td>8 am - 9 pm</td>
+                  </tr>
+                  <tr>
+                    <td>Sat - Sun:</td>
+                    <td>8 am - 5 pm</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5>Follow us</h5>
+              <a href="https://www.facebook.com" target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com" target="_blank"
+                ><i class="fa-brands fa-square-instagram"></i
+              ></a>
+              <a href="https://www.twitter.com" target="_blank"
+                ><i class="fa-brands fa-square-twitter"></i
+              ></a>
+              <a href="https://www.discord.com" target="_blank"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
+              <a href="https://www.tiktok.com" target="_blank"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          Copyright © 2023. All rights reserved.
+          <a class="text-dark" href="#">Koshkasupplyco.com</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
