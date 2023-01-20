@@ -97,6 +97,27 @@
       color: rgb(189, 181, 181);
       padding: 50px 0;
     }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .social li {
+      color: #fff;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 5px 8px;
+    }
+    .social i:hover {
+      color: #866e4e;
+    }
+    .social i {
+      color: rgb(80, 75, 75);
+    }
   </style>
   <body>
     <nav class="navbar navbar-expand-xl navbar-light text-white">
@@ -310,13 +331,13 @@
         <div class="col-md-4 mb-0">
           <div class="d-flex justify-content-center mb-4">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+              src="img/user.jpg"
               class="rounded-circle shadow-1-strong"
               width="150"
               height="150"
             />
           </div>
-          <h5 class="mb-3">John Smith</h5>
+          <h5 class="mb-3">User#13231</h5>
           <h6 class="text-primary mb-3">Customer</h6>
           <p class="px-xl-3">
             <i class="fas fa-quote-left pe-2"></i>I've tried many different
@@ -404,21 +425,37 @@
                 </tbody>
               </table>
               <h5>Follow us</h5>
-              <a href="https://www.facebook.com" target="_blank"
-                ><i class="fa-brands fa-square-facebook"></i
-              ></a>
-              <a href="https://www.instagram.com" target="_blank"
-                ><i class="fa-brands fa-square-instagram"></i
-              ></a>
-              <a href="https://www.twitter.com" target="_blank"
-                ><i class="fa-brands fa-square-twitter"></i
-              ></a>
-              <a href="https://www.discord.com" target="_blank"
-                ><i class="fa-brands fa-discord"></i
-              ></a>
-              <a href="https://www.tiktok.com" target="_blank"
-                ><i class="fa-brands fa-tiktok"></i
-              ></a>
+              <div class="container">
+                <div class="row">
+                  <ul class="social d-flex justify-content-center">
+                    <li>
+                      <a href="https://www.facebook.com" target="_blank"
+                        ><i class="fa-brands fa-square-facebook"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com" target="_blank"
+                        ><i class="fa-brands fa-square-instagram"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://www.twitter.com" target="_blank"
+                        ><i class="fa-brands fa-square-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://www.discord.com" target="_blank"
+                        ><i class="fa-brands fa-discord"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="https://www.tiktok.com" target="_blank"
+                        ><i class="fa-brands fa-tiktok"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
