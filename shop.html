@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop of Koshka Supply and Co.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="img/f_ic.ico" />
+  </head>
+  <style>
+    body {
+      font-family: "Aclonica", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      padding: 0;
+      background-image: linear-gradient(to right, #575655, #3b3939);
+    }
+    @media screen and (min-width: 777px) {
+    }
+    .nav-link {
+      padding: 10px 0;
+      color: rgb(187, 119, 31);
+    }
+
+    .navbar {
+      background-image: linear-gradient(to right, #000000, #5e5b58);
+      box-shadow: 0px 0px 10px 2px #000000;
+    }
+    .navbar-brand {
+      color: #e71d36;
+    }
+    .navbar-brand:hover {
+      color: #fdfffc;
+    }
+    #button {
+      background-color: #e71d36;
+      border-color: none;
+      border-radius: 8%;
+    }
+    .navbar li a:hover {
+      color: #ff9f1c;
+      border-color: #f10823;
+    }
+    #search-box {
+      background-color: rgb(187, 119, 31);
+      border-color: rgb(187, 119, 31);
+      width: 220px;
+      box-shadow: 0px 0px 10px 2px rgb(187, 119, 31);
+    }
+    #search-box input[type="search"] {
+      color: #81807f;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+    }
+    .navbar li {
+      margin-right: 30px;
+    }
+    #search-box:hover i {
+      color: #ff9f1c;
+    }
+    #search-box i {
+      color: rgb(187, 119, 31);
+    }
+    #search-addon:hover i {
+      color: #ff9f1c;
+    }
+    #search-box:active {
+      box-shadow: 0 0 10px 2px #ff9f1c;
+    }
+    input[type="search"]:focus {
+      box-shadow: 0 0 0 0.2rem #ff9f1c;
+    }
+    .testimonials {
+      color: rgb(189, 181, 181);
+      padding: 50px 0;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .social li {
+      color: #fff;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 5px 8px;
+    }
+    .social i:hover {
+      color: #866e4e;
+    }
+    .social i {
+      color: rgb(80, 75, 75);
+    }
+    .product-grid {
+      font-family: "lato", sans-serif;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0px 0px 0px #b65f5f;
+      transition: 0.5s all;
+    }
+    .product-grid:hover {
+      box-shadow: 10px 7px 0px #b65f5f;
+      transition: 0.5s all;
+    }
+    .product-grid .product-image {
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s all;
+    }
+    .product-grid .product-image .image {
+      display: block;
+    }
+    .product-grid .product-image img {
+      width: 100%;
+      height: auto;
+    }
+    .product-image .pic-2 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      transition: 0.5s all;
+    }
+    .product-grid .product-image .pic-1 {
+      opacity: 1;
+      transition: 0.5s all;
+    }
+    .product-grid:hover .product-image .pic-1 {
+      opacity: 0;
+    }
+    .product-grid:hover .product-image .pic-2 {
+      opacity: 1;
+    }
+    .product-grid .social {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+    }
+    .product-grid .social li a {
+      color: #666;
+      background-color: #fff;
+      font-size: 16px;
+      line-height: 40px;
+      height: 40px;
+      width: 40px;
+      display: block;
+      transition: 0.5s all;
+    }
+    .product-grid .social li {
+      margin: 0 0 10px;
+      transform: translateX(100px);
+      transition: 0.5s all;
+    }
+    .product-grid:hover .social li {
+      transform: translateX(0);
+    }
+    .product-grid .social li {
+      margin: 0 0 10px;
+      transform: translateX(100px);
+      transition: 0.5s all;
+    }
+    .product-grid .social li a:hover {
+      color: #fff;
+      background-color: #b65f5f;
+    }
+    .product-grid .product-content {
+      padding: 20px 10px;
+    }
+    .product-grid .product-content .title {
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin: 0 0 7px;
+    }
+    .product-content .title a {
+      color: #000;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: 0.5s all;
+    }
+    .product-content .title a:hover {
+      color: #b65f5f;
+    }
+    .product-grid .price {
+      color: #b65f5f;
+      font-size: 15px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .product-grid .rating {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .product-grid .rating li {
+      color: #ffd200;
+      font-size: 14px;
+      display: inline-block;
+    }
+    header {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: #525a5c;
+      background-position: 20%;
+      box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
+      opacity: 0.9;
+    }
+    .accordion-item {
+      background-color: #d9dbdb;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-light text-white">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="img/logo.png"
+            alt="Logo of the brand"
+            style="width: 70px; height: 70px"
+          />
+          Koshka Supply and Co.</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="input-group rounded mx-auto" id="search-box">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <a href="#"><i class="fa fa-search"></i></a>
+            </span>
+          </div>
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                ><img src="img/home.png" alt="Home logo" /> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="project.html"
+                ><img src="img/project.png" alt="Project logo" /> Project</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"
+                ><img src="img/about.png" alt="About logo" /> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html"
+                ><img src="img/contact.png" alt="Contact us logo" /> Contact
+                Us</a
+              >
+            </li>
+            <li class="nav-item" id="button">
+              <a class="nav-link mx-2 btn rounded-0" href="shop.html"
+                >Shop Now</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="py-5" style="background-image: url('img/hbg.jpg')">
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Get up to 40% off</h1>
+          <p class="lead fw-normal text-white-50 mb-0">New Arrivals</p>
+        </div>
+      </div>
+    </header>
+    <h1 class="display-4 fw-bolder text-center my-5 text-white">
+      New Collections
+    </h1>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#" class="image">
+                <img class="pic-1" src="img/itachi.jpg" />
+                <img class="pic-2 img-fluid" src="img/itachi1.jpg" />
+              </a>
+              <ul class="social">
+                <li>
+                  <a href="#"
+                    ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <h3 class="title">
+                <a href="#">Uchiha Itachi Contact Lens</a>
+              </h3>
+              <div class="price">₱149.99</div>
+              <ul class="rating">
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#" class="image">
+                <img class="pic-1" src="img/makima.jpg" />
+                <img class="pic-2" src="img/makima1.jpg" />
+              </a>
+              <ul class="social">
+                <li>
+                  <a href="#"
+                    ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <h3 class="title">
+                <a href="#">Makima Contact Lens</a>
+              </h3>
+              <div class="price">₱149.99</div>
+              <ul class="rating">
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#" class="image">
+                <img class="pic-1" src="img/muzan.jpg" />
+                <img class="pic-2" src="img/muzan1.jpg" />
+              </a>
+              <ul class="social">
+                <li>
+                  <a href="#"
+                    ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <h3 class="title">
+                <a href="#">Kibutsuji Muzan Contact Lens</a>
+              </h3>
+              <div class="price">₱149.99</div>
+              <ul class="rating">
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#" class="image">
+                <img class="pic-1" src="img/Gojo.jpg" />
+                <img class="pic-2" src="img/gojo1.jfif" />
+              </a>
+              <ul class="social">
+                <li>
+                  <a href="#"
+                    ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <h3 class="title">
+                <a href="#">Satoru Gojo Contact Lens</a>
+              </h3>
+              <div class="price">₱149.99</div>
+              <ul class="rating">
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+                <li class="fa-sharp fa-solid fa-star"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="product-grid">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img class="pic-1" src="img/touka.jpg" />
+                    <img class="pic-2 img-fluid" src="img/touka1.png" />
+                  </a>
+                  <ul class="social">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <h3 class="title">
+                    <a href="#">Touka Kirishima Contact Lens</a>
+                  </h3>
+                  <div class="price">₱149.99</div>
+                  <ul class="rating">
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star-half-alt"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="product-grid">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img class="pic-1" src="img/sasuke.jpg" />
+                    <img class="pic-2 img-fluid" src="img/sasuke1.jpg" />
+                  </a>
+                  <ul class="social">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <h3 class="title">
+                    <a href="#">Uchiha Sasuke Contact Lens</a>
+                  </h3>
+                  <div class="price">₱149.99</div>
+                  <ul class="rating">
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="product-grid">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img class="pic-1" src="img/nezuko.jpg" />
+                    <img class="pic-2 img-fluid" src="img/nezuko1.jpg" />
+                  </a>
+                  <ul class="social">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <h3 class="title">
+                    <a href="#">Nezuko Kamado Contact Lens</a>
+                  </h3>
+                  <div class="price">₱149.99</div>
+                  <ul class="rating">
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="product-grid">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img class="pic-1" src="img/sharingan.jpg" />
+                    <img class="pic-2 img-fluid" src="img/sharingan1.jpg" />
+                  </a>
+                  <ul class="social">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-sharp fa-solid fa-magnifying-glass"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-bag"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fa-solid fa-shopping-cart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <h3 class="title">
+                    <a href="#">Sharingan 3-Tomoe Contact Lens</a>
+                  </h3>
+                  <div class="price">₱149.99</div>
+                  <ul class="rating">
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star"></li>
+                    <li class="fa-sharp fa-solid fa-star-half-alt"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="display-4 fw-bolder my-5 text-white">
+          Frequently Asked Questions
+        </h4>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                What types of contact lenses are available?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                There are several types of contact lenses available including
+                daily disposable, weekly disposable, monthly disposable, and
+                extended wear lenses.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Can I wear contact lenses if I have astigmatism?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Yes, there are specific types of contact lenses called toric
+                lenses that are designed to correct astigmatism.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Do you offer international shipping?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Yes, we offer international shipping to select countries.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFour"
+                aria-expanded="false"
+                aria-controls="flush-collapseFour"
+              >
+                Can I wear contact lenses while swimming or showering?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingFour"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                No, it is not recommended to wear contact lenses while swimming
+                or showering as the lenses can absorb harmful bacteria and
+                chemicals from the water.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFive"
+                aria-expanded="false"
+                aria-controls="flush-collapseFive"
+              >
+                How often do I need to replace my contact lenses?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingFive"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                The frequency of replacement will depend on the type of contact
+                lenses you are using. Daily disposable lenses need to be
+                replaced daily, weekly disposable lenses need to be replaced
+                weekly, monthly disposable lenses need to be replaced monthly,
+                and extended wear lenses need to be replaced every two to four
+                weeks.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSix">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSix"
+                aria-expanded="false"
+                aria-controls="flush-collapseSix"
+              >
+                Can I sleep in my contact lenses?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseSix"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingSix"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                It depends on the type of contact lenses you are using. Some
+                contact lenses are specifically designed for overnight wear, but
+                others should only be worn during the day. It's important to
+                consult with your eye doctor to determine if it's safe for you
+                to sleep in your contact lenses.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSeven">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSeven"
+                aria-expanded="false"
+                aria-controls="flush-collapseSeven"
+              >
+                Can I wear contact lenses if I have dry eyes?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseSeven"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingSeven"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                It depends on the severity of your dry eye condition. Some
+                contact lenses are specifically designed for people with dry
+                eyes, but others may not be suitable. It's important to consult
+                with your eye doctor to determine if contact lenses are a good
+                option for you and which type of lenses would be best for your
+                eyes.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3 mt-5" style="background-color: #9c9177">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4">
+            <img
+              src="img/logo.png"
+              alt="Logo of the brand"
+              style="width: 24px"
+              height="24px"
+            />
+            <h5 class="mb-3 mt-3" style="letter-spacing: 2px; color: #313831">
+              Koshka Supply and Co.
+            </h5>
+            <p>
+              With one of the biggest collections of anime contact lenses
+              available online, we guarantee that you'll find your perfect pair
+              here at Koshka Supply and Co.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-3" style="letter-spacing: 2px; color: #313831">
+              Links
+            </h5>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1">
+                <a href="#!" style="color: #4f4f4f"
+                  >Frequently Asked Questions</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="#!" style="color: #4f4f4f">Delivery</a>
+              </li>
+              <li class="mb-1">
+                <a href="#!" style="color: #4f4f4f">Pricing</a>
+              </li>
+              <li>
+                <a href="#!" style="color: #4f4f4f">Where we deliver?</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 class="mb-1" style="letter-spacing: 2px; color: #313831">
+              Opening Hours
+            </h5>
+            <table class="table" style="color: #4f4f4f; border-color: #666">
+              <tbody>
+                <tr>
+                  <td>Mon - Fri:</td>
+                  <td>8 am - 9 pm</td>
+                </tr>
+                <tr>
+                  <td>Sat - Sun:</td>
+                  <td>8 am - 5 pm</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5 class="mb-1" style="letter-spacing: 2px; color: #313831">
+              Follow us
+            </h5>
+            <div class="container">
+              <div class="row">
+                <ul class="social d-flex justify-content-start">
+                  <li>
+                    <a href="https://www.facebook.com" target="_blank"
+                      ><i class="fa-brands fa-square-facebook"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com" target="_blank"
+                      ><i class="fa-brands fa-square-instagram"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.twitter.com" target="_blank"
+                      ><i class="fa-brands fa-square-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.discord.com" target="_blank"
+                      ><i class="fa-brands fa-discord"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a href="https://www.tiktok.com" target="_blank"
+                      ><i class="fa-brands fa-tiktok"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        Copyright © 2023. All rights reserved.
+        <a class="text-dark" href="mailto:Koshkasupplyco.com"
+          >Koshkasupplyco.com</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
